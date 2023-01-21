@@ -1,0 +1,73 @@
+﻿
+
+@model OgrenciNotMvc.Models.EntityFramework.Tbl_Ogrenciler
+
+@{
+    ViewBag.Title = "OgrenciKayit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post" class="form-group">
+    <div>
+        <label>Öğrenci Adı</label>
+        <input type="text" class="form-control" name="OgrAd" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Öğrenci Soyadı</label>
+        <input type="text" class="form-control" name="OgrSoyad" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Öğrenci Fotoğrafı</label>
+        <input type="text" class="form-control" name="OgrFotograf" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Öğrenci Cinsiyet</label>
+        <input type="text" class="form-control" name="OgrCinsiyet" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Öğrenci Kulüp</label>
+        @Html.DropDownListFor(m => m.Tbl_Kulüpler.KulüpId, (List<SelectListItem>)ViewBag.Degerler, new { @class = "form-control" })
+    </div>
+
+    @*<div style="margin-top:10px">
+            <label>Şehir Seçimi</label>
+            @Html.DropDownList("Şehirler",
+            new[]
+            {
+                new SelectListItem(){Value="1",Text="Ankara"},
+                new SelectListItem(){Value="2",Text="Izmir"},
+                new SelectListItem(){Value="3",Text="Denizli"},
+            }, "Şehir Seçiniz", new { @class = "form-control" })
+        </div>
+
+        <div style="margin-top:10px">
+
+            <label>Film Seçiniz</label>
+            <select id="MovieType" name="MovieType">
+
+                <option value="0">Aksiyon</option>
+
+                <option value="1">Romantik</option>
+
+                <option value="2">Komedi</option>
+
+                <option value="3">Bilim Kurgu</option>
+
+                <option value="4">Animasyon</option>
+
+            </select>
+
+        </div>
+
+        <div style="margin-top:10px">
+
+            @Html.DropDownList("MovieType",null,"Choose Category", new {@class="form-control"})
+
+        </div>*@
+
+
+
+    <div style="margin-top:10px">
+        <button class="btn btn-info">Öğrenci Ekle</button>
+    </div>
+</form>
